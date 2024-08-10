@@ -1,0 +1,40 @@
+{% extends 'theme.html' %}
+  
+{% block content %}
+  
+
+        <div class="container">
+           <div class="row">
+
+        {% for Workshops  in Workshop %}
+    <div class ="col-md-3">
+      <div class="card" >
+        <img src="{{Workshops.image}}" class="card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title">{{Workshops.shop_name}}</h5>
+          <p class="card-text">{{Workshops.mechanic_name}}</p>
+          <p class="card-text">{{Workshops.address}}</p>
+          <p class="card-text">{{Workshops.service}}</p>
+          <p class="card-text">{{Workshops.vehicle_type}}</p>
+          
+          <a href='applyrequest' class="btn btn-primary">Apply for Request</a>
+         <a href='review' class="btn btn-primary">Send Review</a>
+            <a href='call' class="btn btn-primary">Get a call back</a>
+
+            
+        </div>
+      </div>
+   </div>
+   
+    {% endfor %}
+         </div>
+             </div>
+  
+  
+{% endblock %}
+   
+
+
+            
+
+ 

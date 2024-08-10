@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+   background-image:url("https://tse4.mm.bing.net/th?id=OIP.GTDVyx7sCf3ddmI0VSSYZAHaEK&pid=Api&P=0.jpg");
+   background-size: cover;
+
+
+}
+
+
+ td {
+
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+ tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+
+  background-color: yellow;
+
+}
+h1{
+ color:white;
+}
+</style>
+</head>
+<body>
+<center><h1>CALLS</h1></center>
+
+<table  align='center' >
+ <thead>
+<tr>
+    <td>SNO</td>
+   <td>MOBILE NO</td>
+   <td>SMS</td>
+
+</tr>
+</thead>
+    {% for k in queryset %}
+    <tbody><tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{k.Mobile_no}}</td>
+        <td>{{k.SMS}}</td>
+    </tr></tbody>{% endfor %}
+</table>
+
+</body>
+</html>

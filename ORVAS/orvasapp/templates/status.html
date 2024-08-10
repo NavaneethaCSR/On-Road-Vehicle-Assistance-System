@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1 id="header">Request History</h1>
+
+<br/><br/>
+<form action="" method=POST class="frm">
+    {% csrf_token %}
+    <table class="table table-striped table-hover table-bordered ">
+        <thead class="thead-light">
+        <tr>
+             <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Vehicle_Name</th>
+            <th scope="col">Vehicle_Type</th>
+            <th scope="col">Problem</th>
+            <th scope="col">Status</th>
+
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for k in queryset %}
+        <tr>
+             <td id="head9">
+                {{ k.id }}
+
+            </td>
+            <td id="head">
+                {{ k.Name }}
+
+            </td>
+            <td id="head1">
+
+                {{ k.Vehicle_Type }}
+            </td>
+            <td id="head2">
+
+                {{ k.Vehicle_No }}
+            </td>
+            <td id="head3">
+
+                {{ k.Problem }}
+            </td>
+
+                          <td>
+                                {% if k.status == 1 %}
+                                    <span class="btn btn-success" >Approved</span>
+                                {% elif k.status == 2 %}
+                                    <span class="btn btn-danger">Rejected</span>
+                                {% else %}
+                                    <span class="btn btn-info">Pending</span>
+                                {% endif %}
+                            </td>
+
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+</form>
+<br/>
+{% endblock %}
+

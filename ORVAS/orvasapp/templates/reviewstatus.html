@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+   background-image:url("https://4.bp.blogspot.com/-yP9dbKHNaTE/Tq8R3v0LoAI/AAAAAAAAAck/YobVZqcdilA/s1600/2011.10.14.14.50.17.jpg.jpg");
+   background-size: cover;
+
+
+}
+
+
+ td {
+
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+ tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+
+  background-color: yellow;
+
+}
+h1{
+ color:white;
+}
+</style>
+</head>
+<body>
+<center><h1>REVIEWS</h1></center>
+
+<table  align='center' >
+ <thead>
+<tr>
+   <td>SNO</td>
+   <td>NAME</td>
+    <td>REVIEW</td>
+</tr>
+</thead>
+    {% for k in queryset %}
+    <tbody><tr>
+       <td>{{forloop.counter}}</td>
+        <td>{{k.Enter_Name}}</td>
+        <td>{{k.Write_review}}</td>
+    </tr></tbody>{% endfor %}
+</table>
+
+</body>
+</html>
